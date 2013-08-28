@@ -1,0 +1,24 @@
+# Maintainer: Christof "chdorner" Dorner <https://github.com/chdorner>
+pkgname=jflect
+pkgver=master
+pkgrel=1
+pkgdesc="takes json from stdin and outputs go structs to stdout"
+arch=('x86_64' 'i686')
+url="http://github.com/str1ngs/$pkgname/"
+license=('BSD')
+makedepends=('go')
+options=('!strip' '!emptydirs')
+source=("https://github.com/str1ngs/$pkgname/archive/$pkgver.tar.gz")
+md5sums=('3dfeb67bb451019dc44275b96e787c4d')
+
+build() {
+  cd "$srcdir/$pkgname-$pkgver"
+  go build
+}
+
+package() {
+  cd "$srcdir/$pkgname-$pkgver"
+
+  install -Dm755 "$pkgname-$pkgver" "$pkgdir/usr/bin/$pkgname"
+  install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}
