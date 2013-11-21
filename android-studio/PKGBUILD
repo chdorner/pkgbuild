@@ -6,10 +6,10 @@
 #   - Lubomir 'Kuci' Kucera <kuci24-at-gmail-dot-com>
 
 pkgname=android-studio
-pkgver=0.3.2
+pkgver=0.3.6
 pkgrel=1
-_build=130.737825
-_patch=132.893413
+_build=132.883541
+_patch=132.917931
 pkgdesc="A new Android development environment based on IntelliJ IDEA."
 arch=(i686 x86_64)
 url="http://developer.android.com/sdk/installing/studio.html"
@@ -23,9 +23,9 @@ source=(https://dl.google.com/android/studio/android-studio-bundle-${_build}-lin
         ${pkgname}.desktop)
 test ! -z ${_patch} && source+=("https://dl.google.com/android/studio/patches/AI-${_build}-${_patch}-patch-unix.jar")
 noextract=(AI-${_build}-${_patch}-patch-unix.jar)
-sha256sums=('f7b2c9a9b04984c688d68de6b6da17cce3b46dfc71a14cd4a7a41128a26212e1'
+sha256sums=('9463b6fde6cdc1f9ef781f5aab0bad64566c54fdf491d12f714ab2d5aac9b0ce'
             '2bba1530d217d055441b1075f53f09b172bdb56ae3908ef80201fd2ba766b33d'
-            '0178ddb479a12489312b09efb33e794788f6bd5735120c909d25a29f2858c6cc')
+            '8d8b3925688f191b6127e7e986f150c366b2e98c162cbdb1a9eaecfe847c26fc')
 
 [ $CARCH = "x86_64" ] && depends=('python' 'lib32-fontconfig' 'lib32-mesa' 'lib32-libxrender' 'android-sdk')
 
