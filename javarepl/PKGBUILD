@@ -1,0 +1,26 @@
+# Maintainer: Christof "chdorner" Dorner <https://github.com/chdorner>
+pkgname=javarepl
+pkgver=0
+pkgrel=1
+pkgdesc="A simple Read-Eval-Print-Loop for Java language"
+arch=('any')
+url="https://github.com/albertlatacz/java-repl"
+license=('Apache')
+depends=('java-runtime')
+provides=('javarepl')
+source=(
+  "http://albertlatacz.published.s3.amazonaws.com/${pkgname}/${pkgname}.jar"
+  javarepl
+)
+noextract=("${pkgname}.jar")
+sha256sums=(
+  "SKIP"
+  "e22fa0d7990b9a43d0c1c71ddfed3617641b017c2c687250a1c1d3a49ac8c291"
+)
+
+package() {
+  install -m755 -d ${pkgdir}/usr/share/java/
+  install -D -m644 ${srcdir}/${pkgname}.jar ${pkgdir}/usr/share/java/${pkgname}.jar
+
+  install -Dm755 ${srcdir}/javarepl ${pkgdir}/usr/bin/javarepl
+}
