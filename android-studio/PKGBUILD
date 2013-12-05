@@ -6,10 +6,10 @@
 #   - Lubomir 'Kuci' Kucera <kuci24-at-gmail-dot-com>
 
 pkgname=android-studio
-pkgver=0.3.6
+pkgver=0.3.7
 pkgrel=1
 _build=132.883541
-_patch=132.917931
+_patch=132.932373
 pkgdesc="A new Android development environment based on IntelliJ IDEA."
 arch=(i686 x86_64)
 url="http://developer.android.com/sdk/installing/studio.html"
@@ -23,9 +23,9 @@ source=(https://dl.google.com/android/studio/android-studio-bundle-${_build}-lin
         ${pkgname}.desktop)
 test ! -z ${_patch} && source+=("https://dl.google.com/android/studio/patches/AI-${_build}-${_patch}-patch-unix.jar")
 noextract=(AI-${_build}-${_patch}-patch-unix.jar)
-sha256sums=('9463b6fde6cdc1f9ef781f5aab0bad64566c54fdf491d12f714ab2d5aac9b0ce'
-            '2bba1530d217d055441b1075f53f09b172bdb56ae3908ef80201fd2ba766b33d'
-            '8d8b3925688f191b6127e7e986f150c366b2e98c162cbdb1a9eaecfe847c26fc')
+sha512sums=('b5c7b4b7d7c692375b13906d933b33ae39efcb6ac8a53937b1a8472b97782ee96666bec11261acb14ca40cc0e56bb8f0627a2a438332cdcd089d2f1b1f77b0b1'
+            'fa3567f328af45d265c4fabf3e41b55d8e8cccfa9675e745f07dd6ae41950dd53a2ef41ef1caee86643f5c2ddf7a7681ee17155e208a7b6fdae6c0537dfc0c94'
+            '1b0509b775dea0506bba3d7c673ede50504b66903cedf21885bb597857a0c297cf04ca0a8e6b25a837f2e44ef8459bbd0ac586f7d1cc567c377efd8157ac9cda')
 
 [ $CARCH = "x86_64" ] && depends=('python' 'lib32-fontconfig' 'lib32-mesa' 'lib32-libxrender' 'android-sdk')
 
